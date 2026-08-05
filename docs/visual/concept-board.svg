@@ -1,0 +1,32 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="1000" fill="#090D17"/>
+  <rect x="52" y="52" width="1496" height="896" rx="26" fill="#101A2C" stroke="#334A6E"/>
+  <rect x="96" y="96" width="720" height="356" rx="20" fill="#152239" stroke="#3A557F"/>
+  <rect x="838" y="96" width="666" height="170" rx="18" fill="#162943" stroke="#3A557F"/>
+  <rect x="838" y="282" width="666" height="170" rx="18" fill="#132339" stroke="#3A557F"/>
+  <rect x="96" y="474" width="1408" height="182" rx="20" fill="#132137" stroke="#3A557F"/>
+  <rect x="96" y="676" width="960" height="220" rx="20" fill="#16243A" stroke="#3A557F"/>
+  <rect x="1080" y="676" width="424" height="220" rx="20" fill="#142235" stroke="#3A557F"/>
+  <text x="124" y="146" fill="#E2C47C" font-size="20" letter-spacing="3">THRESHOLD HERO</text>
+  <text x="124" y="210" fill="#F2EEE4" font-size="58" font-family="Georgia">Cinematic Editorial Hierarchy</text>
+  <text x="124" y="272" fill="#C1B9A6" font-size="24">Discovered pathways. Archival intelligence. Mystery with comprehension.</text>
+  <text x="862" y="138" fill="#9EA9C2" font-size="18" letter-spacing="2">PALETTE</text>
+  <text x="862" y="172" fill="#F2EEE4" font-size="26">Obsidian / Slate / Luminous Parchment</text>
+  <text x="862" y="214" fill="#C1B9A6" font-size="20">Accent: Warm brass + tempered cyan</text>
+  <text x="862" y="324" fill="#9EA9C2" font-size="18" letter-spacing="2">TYPOGRAPHY</text>
+  <text x="862" y="360" fill="#F2EEE4" font-size="26">Cormorant Garamond + Manrope</text>
+  <text x="862" y="404" fill="#C1B9A6" font-size="20">Editorial display with readable systems copy</text>
+  <text x="124" y="526" fill="#9EA9C2" font-size="18" letter-spacing="2">PORTAL IDENTITY STRIPS</text>
+  <text x="124" y="566" fill="#F2EEE4" font-size="24">Archive · Laboratory · Observatory · Resonance · Gallery · Oracle</text>
+  <text x="124" y="610" fill="#C1B9A6" font-size="18">Tints and symbols differentiate chambers without breaking cohesion.</text>
+  <text x="124" y="732" fill="#9EA9C2" font-size="18" letter-spacing="2">MOTION & INTERACTION</text>
+  <text x="124" y="770" fill="#F2EEE4" font-size="24">Subtle rise-in, tactile hover lift, focus-first controls</text>
+  <text x="124" y="814" fill="#C1B9A6" font-size="18">Reduced-motion mode collapses transitions to near-zero.</text>
+  <text x="1106" y="732" fill="#9EA9C2" font-size="18" letter-spacing="2">MEDIA</text>
+  <text x="1106" y="770" fill="#F2EEE4" font-size="24">Generated inscription motifs</text>
+  <text x="1106" y="814" fill="#C1B9A6" font-size="18">No generic galaxy or neon-cyberpunk effects.</text>
+  <g opacity="0.35" stroke="#78B5B3" stroke-width="2">
+    <path d="M140 910C290 790 440 780 590 862"/>
+    <path d="M760 884C900 788 1060 802 1240 886"/>
+  </g>
+</svg>
