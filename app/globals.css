@@ -1,13 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #0b0b10;
-  --color-surface: #11131a;
-  --color-panel: #151822;
-  --color-text: #ece7d8;
-  --color-muted: #b7b0a0;
-  --color-border: #313545;
-  --color-focus: #a78cd9;
+  --color-bg: #07090f;
+  --color-bg-elevated: #0e1320;
+  --color-surface: #11192a;
+  --color-panel: #162238;
+  --color-panel-soft: #1a2a44;
+  --color-text: #f2eee4;
+  --color-muted: #c1b9a6;
+  --color-muted-strong: #9ea9c2;
+  --color-border: #32466a;
+  --color-focus: #d0b36f;
+  --color-accent: #75b4b2;
+  --color-accent-warm: #e1c37b;
+  --space-1: 0.4rem;
+  --space-2: 0.7rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2.25rem;
+  --space-6: 3.5rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.9rem;
+  --radius-lg: 1.4rem;
+  --radius-xl: 1.8rem;
+  --container-max: 74rem;
+  --motion-fast: 160ms;
+  --motion-base: 280ms;
+  --motion-slow: 600ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -16,44 +36,195 @@
 
 body {
   margin: 0;
-  background: radial-gradient(circle at top, #1a1e2a 0%, var(--color-bg) 45%);
+  background:
+    radial-gradient(circle at 12% 12%, rgba(117, 180, 178, 0.14) 0%, rgba(117, 180, 178, 0) 36%),
+    radial-gradient(circle at 88% 2%, rgba(225, 195, 123, 0.1) 0%, rgba(225, 195, 123, 0) 34%),
+    linear-gradient(165deg, var(--color-bg-elevated) 0%, var(--color-bg) 68%);
   color: var(--color-text);
-  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-body), "Segoe UI", sans-serif;
   line-height: 1.6;
+  min-height: 100vh;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: var(--font-display), Georgia, serif;
   line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 .skip-link {
   position: absolute;
-  left: 0.5rem;
+  left: 0.7rem;
   top: -5rem;
   z-index: 60;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
   background: var(--color-panel);
   padding: 0.75rem 1rem;
+  color: var(--color-text);
 }
 
 .skip-link:focus-visible {
-  top: 0.5rem;
+  top: 0.7rem;
   outline: 2px solid var(--color-focus);
 }
 
 .ambient {
   position: fixed;
   inset: 0;
-  background-image: linear-gradient(to right, transparent 0%, rgba(236, 231, 216, 0.03) 50%, transparent 100%);
+  background:
+    linear-gradient(to right, transparent 0%, rgba(242, 238, 228, 0.03) 42%, transparent 100%),
+    linear-gradient(to bottom, transparent 0%, rgba(117, 180, 178, 0.02) 100%);
   pointer-events: none;
+  z-index: 0;
+}
+
+.container-shell {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-max);
+  padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-shell {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-shell {
+    padding-inline: 2rem;
+  }
+}
+
+.editorial-eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-muted-strong);
+}
+
+.surface-plate {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, color-mix(in oklab, var(--color-panel) 88%, black) 0%, var(--color-panel-soft) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 20px 45px rgba(0, 0, 0, 0.26);
+}
+
+.surface-panel {
+  border: 1px solid color-mix(in oklab, var(--color-border) 84%, var(--color-accent));
+  border-radius: var(--radius-md);
+  background: color-mix(in oklab, var(--color-panel) 84%, black);
+}
+
+.chamber-frame {
+  position: relative;
+  overflow: clip;
+}
+
+.chamber-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, rgba(225, 195, 123, 0.12) 0%, rgba(117, 180, 178, 0.04) 55%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4));
+}
+
+.focus-ring {
+  transition:
+    border-color var(--motion-fast) var(--motion-ease),
+    transform var(--motion-fast) var(--motion-ease),
+    background-color var(--motion-base) var(--motion-ease);
+}
+
+.focus-ring:hover {
+  border-color: color-mix(in oklab, var(--color-accent-warm) 60%, var(--color-focus));
+  transform: translateY(-2px);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+.portal-tint {
+  position: relative;
+  overflow: clip;
+}
+
+.portal-tint::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.portal-tint[data-portal="archive"]::after {
+  background: linear-gradient(135deg, rgba(225, 195, 123, 0.12), rgba(225, 195, 123, 0));
+}
+
+.portal-tint[data-portal="laboratory"]::after {
+  background: linear-gradient(145deg, rgba(117, 180, 178, 0.16), rgba(117, 180, 178, 0));
+}
+
+.portal-tint[data-portal="observatory"]::after {
+  background: linear-gradient(145deg, rgba(158, 169, 194, 0.18), rgba(158, 169, 194, 0));
+}
+
+.portal-tint[data-portal="resonance"]::after {
+  background: linear-gradient(145deg, rgba(209, 176, 106, 0.16), rgba(209, 176, 106, 0));
+}
+
+.portal-tint[data-portal="gallery"]::after {
+  background: linear-gradient(145deg, rgba(117, 180, 178, 0.1), rgba(158, 169, 194, 0.05), rgba(0, 0, 0, 0));
+}
+
+.portal-tint[data-portal="oracle"]::after {
+  background: linear-gradient(145deg, rgba(91, 108, 141, 0.18), rgba(11, 15, 26, 0));
+}
+
+.media-motif {
+  background-image: url("/media/inscription-grid.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section-rule {
+  border-top: 1px solid color-mix(in oklab, var(--color-border) 82%, transparent);
+  padding-top: var(--space-5);
+}
+
+.animate-rise {
+  animation: rise var(--motion-slow) var(--motion-ease) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -64,5 +235,9 @@ h4 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .focus-ring:hover {
+    transform: none;
   }
 }

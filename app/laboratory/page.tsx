@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { LaboratoryConsole } from "@/components/laboratory-console";
 import { PortalPage } from "@/components/portal-page";
 
 export const metadata: Metadata = {
@@ -14,6 +15,8 @@ export default function LaboratoryPage() {
       title="Systems, experiments, and prototypes"
       description="A chamber for creative technology, process studies, and experimental tools."
       framing="All experiments are exploratory and are not presented as medical, legal, financial, or scientific certainty."
-    />
+    >
+      <LaboratoryConsole />
+    </PortalPage>
   );
 }

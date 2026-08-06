@@ -5,17 +5,21 @@ interface PortalPageProps {
   title: string;
   description: string;
   framing?: string;
+  children?: React.ReactNode;
 }
 
-export function PortalPage({ eyebrow, title, description, framing }: PortalPageProps) {
+export function PortalPage({ eyebrow, title, description, framing, children }: PortalPageProps) {
   return (
-    <section className="mx-auto w-full max-w-4xl px-4 py-14 sm:px-6 lg:px-8">
-      <SectionHeading eyebrow={eyebrow} title={title} description={description} />
+    <section className="container-shell py-14 sm:py-16">
+      <div className="surface-plate chamber-frame p-7 sm:p-10">
+        <SectionHeading eyebrow={eyebrow} title={title} description={description} />
+      </div>
       {framing && (
-        <p className="rounded-lg border border-[color:var(--color-border)] bg-[color:var(--color-panel)] p-4 text-sm text-[color:var(--color-muted)]">
+        <p className="surface-panel mt-6 p-4 text-sm text-[color:var(--color-muted)]">
           {framing}
         </p>
       )}
+      {children}
     </section>
   );
 }

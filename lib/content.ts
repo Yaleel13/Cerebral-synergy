@@ -117,3 +117,119 @@ export const currentSignals: ContentEntry[] = [
     isDraft: false,
   },
 ];
+
+export const archiveEntries: ContentEntry[] = [
+  {
+    slug: "future-memory-index",
+    title: "Archive Index: Future Memory",
+    summary: "An index of recurring themes linking symbolic archives with contemporary creative systems.",
+    body: "This index traces motifs that reappear across myth, visual language, and computational storytelling. It is an editorial map designed for exploration.",
+    type: "essay",
+    status: "published",
+    tags: ["archive", "myth", "systems"],
+    createdAt: "2026-08-01",
+    publishedAt: "2026-08-02",
+    updatedAt: "2026-08-03",
+    seoTitle: "Archive Index: Future Memory",
+    seoDescription: "A foundational archive index for Alchemical Futurism studies.",
+    isDraft: false,
+  },
+  {
+    slug: "glyph-ecologies",
+    title: "Field Manuscript: Glyph Ecologies",
+    summary: "A manuscript observing how symbols mutate when they move between mediums and eras.",
+    body: "Glyph ecologies are tracked as living systems, not fixed definitions. This manuscript supports comparative reading between visual design, language, and ritual framing.",
+    type: "field-note",
+    status: "published",
+    tags: ["archive", "symbols", "field-note"],
+    createdAt: "2026-08-02",
+    publishedAt: "2026-08-03",
+    updatedAt: "2026-08-04",
+    seoTitle: "Field Manuscript: Glyph Ecologies",
+    seoDescription: "A field manuscript from the Archive on symbol migration.",
+    isDraft: false,
+  },
+  {
+    slug: "institutional-lexicon",
+    title: "Institutional Lexicon 01",
+    summary: "Working language definitions for chambers, transmissions, and ethical framing terms.",
+    body: "This lexicon clarifies terms used throughout the institution so that mystery never compromises comprehension.",
+    type: "lore",
+    status: "expanding",
+    tags: ["archive", "institution", "lexicon"],
+    createdAt: "2026-08-03",
+    seoTitle: "Institutional Lexicon 01",
+    seoDescription: "Working terminology for the Cerebral Synergy institution.",
+    isDraft: false,
+  },
+];
+
+export const laboratoryProtocols = [
+  {
+    id: "protocol-00",
+    name: "Instrument 00",
+    state: "Transmission Active",
+    summary: "Defines baseline constraints for AI-mediated creative exploration.",
+    notes: "Outputs are interpretive artifacts and require editorial review before publication.",
+  },
+  {
+    id: "protocol-01",
+    name: "Narrative Mixer",
+    state: "Expanding",
+    summary: "Combines memory fragments into coherent narrative prototypes.",
+    notes: "The system intentionally preserves ambiguity markers to avoid false certainty.",
+  },
+  {
+    id: "protocol-02",
+    name: "Signal Distiller",
+    state: "Open",
+    summary: "Condenses research notes into concise transmission candidates.",
+    notes: "Distillation is editorial aid, not autonomous publishing.",
+  },
+];
+
+export const resonanceStates = [
+  {
+    id: "draft",
+    title: "Draft Resonance",
+    description: "Sketches and motifs are audible internally before public release.",
+  },
+  {
+    id: "published",
+    title: "Published Resonance",
+    description: "The work is stable enough for listening sessions and contextual notes.",
+  },
+  {
+    id: "expanding",
+    title: "Expanding Resonance",
+    description: "A transmission is live and may evolve as additional layers are introduced.",
+  },
+];
+
+export const galleryPieces = [
+  {
+    id: "vault-study-01",
+    title: "Vault Study 01",
+    medium: "Digital composition",
+    description: "A layered plate balancing archival geometry with modern signal glyphs.",
+    palette: "Obsidian, brass, and deep cyan",
+  },
+  {
+    id: "threshold-atlas",
+    title: "Threshold Atlas",
+    medium: "Editorial collage",
+    description: "A map-like composition framing routes between symbolic zones.",
+    palette: "Slate blue and luminous parchment",
+  },
+  {
+    id: "oracle-lintel",
+    title: "Oracle Lintel",
+    medium: "Mixed media render",
+    description: "A sealed portal motif marking deferred interaction territory.",
+    palette: "Muted indigo and burnished gold",
+  },
+];
+
+export function getArchiveEntryBySlug(slug: string): ContentEntry | undefined {
+  return archiveEntries.find((entry) => entry.slug === slug);
+}
